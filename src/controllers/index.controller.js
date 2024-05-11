@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken')
 
 class controller {
     main(req,res) {
-        alert('dự án chỉ với mục đích học tập nên mong ae góp ý 💖')
         try {
             var token = req.cookies['user_token']
             console.log(token)
