@@ -1,0 +1,702 @@
+:root {
+    --color-primary: #0a091b;
+    --color-second: #4f46e5;
+
+    --color-text-hover: rgba(255, 255, 0, 0.133);
+}
+
+
+
+@keyframes headingFadeIn {
+    0%{
+        margin-top: 20px;
+        opacity: 0;
+    }
+    100% {
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes earthFadeIn {
+    0% {
+        transform: translateX(-700px) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(0px) rotate(90deg);
+    }
+}
+
+@keyframes moonFadeIn {
+    0% {
+        transform: translate(3000px, -50%);
+    }
+
+    100% {
+        transform: translate(0px, -50%);
+    }
+}
+
+@font-face {
+    font-family: GFF_LATIN_BOLD;
+    src: url('../fonts/GFF-Latin-Bold.ttf');
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.heading {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: var(--color-primary);
+    overflow: hidden;
+}
+
+.navigation {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    background-color: #050c17cc;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    z-index: 100;
+}
+
+.navigation_logo {
+    width: 100px;
+}
+
+.navigation_list {
+    display: flex;
+    list-style: none;
+    height: min-content;
+}
+
+.navigation_item-link {
+    width: max-content;
+    color: white;
+    text-decoration: none;
+    margin: 0 13px;
+    text-align: center;
+    position: relative;
+    font-weight: 570;
+}
+
+.navigation_item-link::after {
+    content: '';
+    position: absolute;
+    transition: 300ms;
+    left: 0;
+    bottom: -3px;
+    width: 0px;
+    height: 1px;
+    background-color: white;
+}
+
+.navigation_item-link:hover::after {
+    width: 100%;
+}
+
+.navigation_item-link-register {
+    padding: 5px 17px;
+    background-color: yellow;
+    color: black;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+.navigation_item-register {
+    transition: 300ms;
+}
+
+.navigation_item-register:hover {
+    scale: 0.9;
+}
+
+.heading_earth {
+    filter: brightness(120%);
+    position: absolute;
+    top: -100px;
+    left: -300px;
+    transform: rotate(90deg);
+    z-index: 2;
+    animation: earthFadeIn 1.5s;
+}
+
+.dot {
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    transform: translate(600px, 500px);
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 129px 21px rgba(255, 255, 255, 0.35);
+    -moz-box-shadow: 0px 0px 129px 21px rgba(255, 255, 255, 0.35);
+    box-shadow: 0px 0px 129px 21px rgba(255, 255, 255, 0.35);
+}
+
+.heading_background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.heading_content {
+    width: 600px;
+    height: 440px;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-45%);
+    animation: headingFadeIn 1s;
+    z-index: 6;
+}
+
+.heading_content-title {
+    font-size: 60pt;
+    color: white;
+}
+
+.heading_content-title-label {
+    color: yellow;
+}
+
+.heading_slogan-wrapper {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.heading_slogan {
+    color: white;
+    width: 100%;
+    animation: typing 2s steps(31), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+}
+
+.heading_slogan-label {
+    color: yellow;
+    font-family: monospace;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+.heading_info-text {
+    margin-top: 20px;
+    padding: 3px;
+    transition: 300ms;
+    border-radius: 5px;
+    color: white;
+}
+
+.heading_info-text:hover {
+    background-color: rgba(255, 255, 0, 0.133);
+}
+
+.heading_buttons {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.heading_info-button {
+    width: 100%;
+    color: white;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 15px;
+    margin: 0 5px;
+    transition: 300ms;
+}
+
+.heading_info-button:hover {
+    scale: 0.9;
+}
+
+.heading_info-button.highlight {
+    background-color: white;
+    color: var(--color-primary);
+}
+
+.heading_info-button.counsel:hover {
+    background-color: yellow;
+    border: 1px solid yellow;
+    color: var(--color-primary);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+}
+
+.about {
+    width: 100%;
+    height: max-content;
+    padding: 50px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.about_title-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.about_title-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about_title {
+    text-align: center;
+    font-size: 50pt;
+    font-family: monospace;
+    background: -webkit-linear-gradient(var(--color-second), var(--color-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about_title::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    display: block;
+    background-color: #4f46e5;
+}
+
+.about_info-list {
+    width: 85%;
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 500ms;
+}
+
+.about_info-list-show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.about_info-wrapper {
+    background-image: linear-gradient(30deg, var(--linear-1), var(--linear-2));
+    height: 80px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.about_info-wrapper:hover {
+    scale: 0.9;
+}
+
+.about_info-title,
+.about_info-number,
+.about_info-unit,
+.about_info-icon {
+    color: white;
+
+}
+
+.about_info-title {
+    font-size: small;
+}
+
+.about_info-number {
+    font-weight: 600;
+    font-size: 22pt;
+}
+
+.about_info-unit {
+    font-size: 15pt;
+}
+
+.about_info-icon-wrapper {
+    height: 100%;
+}
+
+.about_info-icon {
+    font-size: 20pt;
+}
+
+.course_wrapper {
+    width: 100%;
+    height: 130%;
+    background-color: var(--color-primary);
+    position: relative;
+    overflow: hidden;
+    padding: 60px;
+}
+
+.course_title {
+    color: white;
+    font-size: 40pt;
+    margin-bottom: 20px;
+    transition: 300ms;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.course_moon {
+    position: absolute;
+    right: -200px;
+    transform: translateX(600px);
+    scale: 1.3;
+    z-index: 0;
+    transition: 1s;
+}
+
+.course_moon-show {
+    position: absolute;
+    right: -200px;
+    transform: translateX(0);
+    scale: 1.3;
+}
+
+.course_background {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.course_list-wrapper {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 13px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 1s;
+    position: absolute;
+    z-index: 5;
+}
+
+.course_item-wrapper {
+    width: 285px;
+    border-radius: 5px;
+    background-color: white;
+    position: relative;
+    z-index: 4;
+}
+
+.course_item-info {
+    padding: 10px;
+}
+
+.course_item-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 5px;
+}
+
+.course_item-title {
+    font-size: 14pt;
+}
+
+.course_item-price {
+    color: var(--color-second);
+}
+
+.course_teacher-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.course_teacher-image {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+
+.course_item-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: -1;
+    transition: 200ms;
+}
+
+.course_item-button {
+    font-size: larger;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    padding: 5px 13px;
+    background-color: var(--color-second);
+    border-radius: 15px;
+    transition: 200ms;
+
+}
+
+.course_item-wrapper:hover .course_item-overlay {
+    opacity: 1;
+    z-index: 5;
+}
+
+.course_item-button:hover {
+    scale: 0.9;
+}
+
+.course_title-show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.course_list-wrapper-show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.ranking_wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-primary);
+}
+
+.ranking_wallpaper {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.435;
+    z-index: 2;
+}
+
+.ranking_content {
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    position: absolute;
+    padding: 15px 35px;
+}
+
+.ranking_title {
+    text-align: center;
+    color: white;
+    font-family: monospace;
+    font-size: 40pt;
+}
+
+.ranking_title-highlight {
+    font-family: monospace;
+    color: yellow;
+}
+
+.ranking_list-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ranking_item {
+    width: 550px;
+    height: 500px;
+    /* background-color: #4f46e5; */
+}
+
+.ranking_line {
+    width: 2px;
+    height: 500px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.ranking_teachers-wrapper {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    transition: 1s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.ranking_teachers-wrapper-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ranking_teacher-item {
+    width: 30%;
+    height: var(--height);
+    background-color: var(--color-primary);
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid var(--color-second);
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.ranking_teacher-item:hover {
+    scale: 0.975;
+}
+
+
+.ranking_teacher-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-top: 35px;
+    border: 5px solid yellow
+}
+
+.ranking_teacher-number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0, -5px);
+    font-family: monospace;
+    font-size: 40pt;
+    /* font-weight: 600; */
+    color: white;
+    font-family: GFF_LATIN_BOLD;
+}
+
+.ranking_teacher-number.one {
+    color: yellow;
+}
+
+.ranking_teacher-number.three {
+    color: brown;
+}
+
+.ranking_teacher-image-wrapper {
+    position: relative;
+    width: 90px;
+    height: 90px;
+}
+
+.ranking_teacher-image {
+    position: absolute;
+    z-index: 3;
+}
+
+.ranking_teacher-crown {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: -5px;
+    transform: rotate(30deg) translateY(5px) translateX(3px);
+    z-index: 1;
+}
+
+.ranking_teacher-info {
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+}
+
+.ranking_student-table  {
+    width: 100%;
+    color: white;
+    border-spacing: 0 5px;
+    font-size: 14pt;
+    transition: 1s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.ranking_student-table tr {
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: 300ms;
+    padding: 0;
+    cursor: pointer;
+}
+
+.ranking_student-table tr:first-child {
+    background-color: var(--color-second);
+    padding: 0;
+}
+
+.ranking_student-table tr:hover:not(:first-child) {
+    background-color: rgba(0, 0, 0, 0.2);
+    scale: 0.975;
+}
+
+.ranking_student-no {
+    width: 10%;
+    text-align: center;
+}
+
+.ranking_student-name {
+    width: 60%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.ranking_student-exercise {
+    width: 15%;
+    text-align: center;
+}
+
+.ranking_student-point {
+    width: 15%;
+    text-align: right;
+}
+
+.ranking_student-image {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    scale: 0.9;
+}
+
+.ranking_student-table-show {
+    opacity: 1;
+    transform: translateY(0);
+}
