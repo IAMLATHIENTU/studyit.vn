@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/counsel/create.css">
+    <title>Tạo bài viết</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="wrapper_bg">
+
+        </div>
+        <div class="navigation">
+
+        </div>
+        <div class="container">
+            <div class="sidebar_wrapper">
+                
+            </div>
+            <div class="content_wrapper">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const headingBackground = document.querySelector('.wrapper_bg')
+
+        function createDot(x, y, opacity, scale) {
+            var dot = document.createElement('div')
+            dot.classList.add('dot')
+            dot.style.transform = `translate(${x}px, ${y}px)`
+            dot.style.opacity = opacity
+            dot.style.scale = scale
+            return dot
+        }
+
+        for (let index = 0; index < Math.floor(Math.random() * 999) + 300; index++) {
+            var randomX = Math.floor(Math.random() * 1280) + 1;
+            var randomY = Math.floor(Math.random() * 980) + 1;
+            var randomOpacity = Math.random() - 0.2
+            var randomScale = Math.random() + 1 - 0.315
+            console.log(createDot(randomX, randomY, randomOpacity, randomScale))
+            headingBackground.appendChild(createDot(randomX, randomY, randomOpacity, randomScale))
+        }
+    </script>
+</body>
+
+</html>
